@@ -11,13 +11,13 @@ class ReadingApp {
                     'said', 'can', 'little', 'into', 'too',
                     'in', 'are', 'as', 'back', 'by',
                     'he', 'up', 'no', 'from', 'day',
-                    'I', 'had', 'mum', 'children', 'made',
+                    'I', 'had', 'Mum', 'children', 'made',
                     'of', 'my', 'one', 'him', 'time',
                     'it', 'her', 'them', 'Mr', "I'm",
                     'was', 'what', 'do', 'get', 'if',
                     'you', 'there', 'me', 'just', 'help',
                     'they', 'out', 'down', 'now', 'Mrs',
-                    'on', 'this', 'dad', 'came', 'called',
+                    'on', 'this', 'Dad', 'came', 'called',
                     'she', 'have', 'big', 'oh', 'here',
                     'is', 'went', 'when', 'about', 'off',
                     'for', 'be', "it's", 'got', 'asked',
@@ -35,7 +35,7 @@ class ReadingApp {
             'phase2-decodable': {
                 name: 'Phase 2 - Decodable',
                 words: [
-                    'if', 'an', 'mum', 'at', 'but', 'in', 'up', 'it', 'dad', 'off', 'on', 'can', 'get', 'had', 'back', 'and', 'not', 'big', 'him', 'got', 'am'
+                    'if', 'an', 'Mum', 'at', 'but', 'in', 'up', 'it', 'Dad', 'off', 'on', 'can', 'get', 'had', 'back', 'and', 'not', 'big', 'him', 'got', 'am'
                 ]
             },
             'phase3-i-tricky': {
@@ -97,6 +97,7 @@ class ReadingApp {
         this.settingsPage = document.getElementById('settingsPage');
         this.closeButton = document.getElementById('closeButton');
         this.wordListsContainer = document.getElementById('wordListsContainer');
+        this.resetButton = document.getElementById('resetButton');
         
         this.loadProgress();
         this.createWordListToggles();
@@ -222,6 +223,15 @@ class ReadingApp {
             e.preventDefault();
             this.hideSettings();
         });
+        
+        this.resetButton.addEventListener('click', () => {
+            this.resetCounter();
+        });
+        
+        this.resetButton.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            this.resetCounter();
+        });
     }
     
     showSettings() {
@@ -230,6 +240,12 @@ class ReadingApp {
     
     hideSettings() {
         this.settingsPage.style.display = 'none';
+    }
+    
+    resetCounter() {
+        this.wordCount = 0;
+        this.counter.textContent = this.wordCount;
+        this.saveProgress();
     }
 }
 

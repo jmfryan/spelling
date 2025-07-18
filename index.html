@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reading App</title>
+    <title>Spelling</title>
     <style>
         * {
             margin: 0;
@@ -163,6 +163,35 @@
         .toggle-switch.active .slider {
             transform: translateX(30px);
         }
+        
+        .settings-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .reset-button {
+            padding: 15px 30px;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .reset-button:hover {
+            background-color: #ff5252;
+        }
     </style>
 </head>
 <body>
@@ -179,6 +208,10 @@
         </div>
         <div id="wordListsContainer">
             <!-- Word list toggles will be populated here -->
+        </div>
+        <div class="settings-section">
+            <div class="section-title">Counter</div>
+            <button class="reset-button" id="resetButton">Reset Counter</button>
         </div>
     </div>
     
