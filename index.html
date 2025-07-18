@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background-color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        #app {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .word-display {
+            font-size: 15vw;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            max-width: 90%;
+            word-wrap: break-word;
+            line-height: 1.1;
+        }
+        
+        .counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            color: #666;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="counter" id="counter">0</div>
+        <div class="word-display" id="wordDisplay">Loading...</div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
